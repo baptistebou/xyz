@@ -3,6 +3,9 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import { initialTweets } from './data/tweets'
+import { TweetsList } from './components/TweetsList'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +24,7 @@ function App() {
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
         </div>
+
         <button
           type="button"
           className="counter"
@@ -28,9 +32,11 @@ function App() {
         >
           Count is {count}
         </button>
+        <Outlet />
       </section>
 
       <div className="ticks"></div>
+      <TweetsList tweets={initialTweets}/>
 
       <section id="next-steps">
         <div id="docs">
