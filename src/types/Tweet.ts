@@ -4,7 +4,8 @@ export type Tweet = {
     authorHandle : string; 
     content : string; 
     image? : TweetImage; 
-    createdAt : string
+    createdAt : string;
+    parentId?: string
 };
 export type TweetImage = {
     url : string; 

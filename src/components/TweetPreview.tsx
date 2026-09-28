@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import type { Tweet } from "../types/Tweet";
+import { Link } from "react-router-dom";
 
 
 export type TweetPreviewProps = {
@@ -9,11 +10,12 @@ export const TweetPreview = ({tweet} : TweetPreviewProps) : ReactNode => {
     const [isExpanded, setisExpanded] = useState(false); 
     return(
         
-        <div>
+        <div>   
+            <Link to={"/tweets/${tweet.id}"}>Voir la discussion</Link>    
             <h1>{tweet.authorName}</h1>
-            <h2>@{tweet.authorHandle}</h2>
+            <h2>@{tweet.authorHandle}</h2>  
             <p>{tweet.createdAt}</p>
-            {(tweet.image) && <img src={tweet.image.url} alt={tweet.image.alt} className="tweet-image" />}  
+            {(tweet.image) && <Link to={"/tweets/${tweet.id}"}><img src={tweet.image.url} alt={tweet.image.alt} className="tweet-image" /></Link>}  
             {(isExpanded) ? <p>{tweet.content}</p>: <p>{tweet.content.slice(0, 180)}</p>}       
             {(tweet.content.length) > 180 &&  <button onClick={()=> setisExpanded(v => !v)}>{(isExpanded) ? "Voir mois" : "Voir plus"}</button>}
             
