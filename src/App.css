@@ -182,3 +182,20 @@
     border-right-color: var(--border);
   }
 }
+header {
+    display: flex;
+    align-items: center;
+    gap: 24rem;
+    background-color: var(--bleu-gris);
+    
+
+}
+
+.XYZ-Logo{
+  height: 80px;
+  width: auto;
+}
+
+body {
+  background-color: #000000;
+}

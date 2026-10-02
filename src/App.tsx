@@ -5,7 +5,7 @@ import type { Tweet } from './types/Tweet';
 import { useState } from 'react';
 import type { TweetsContextValue} from './contexts/TweetsContext';
 import { TweetsContext } from './contexts/TweetsContext';
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -40,9 +40,13 @@ function App() {
     return (
         <>
             <header>
-                <h1>XYZ</h1> 
+                <img src="/assets/xyz.png" alt="icone de l'application" className='XYZ-Logo'/>
+                <h1> XYZ </h1> 
+                <nav>
+                    <Link to="/">Accueil</Link>
+                </nav>
             </header>
-            <TweetsContext.Provider value={context}>
+            <TweetsContext.Provider value={context} >
                 <Outlet />
             </TweetsContext.Provider>
             
