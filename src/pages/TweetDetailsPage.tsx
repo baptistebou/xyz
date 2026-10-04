@@ -17,7 +17,7 @@ export const TweetDetailsPage = () => {
         return (
             <div>
                 <p> Ce tweet n'existe pas</p>               
-                <Link to="/"> <p>Retour à l'accueil</p></Link>
+                <Link to="/" className="retour"> Retour à l'accueil</Link>
             </div>
         )
     }
@@ -25,6 +25,7 @@ export const TweetDetailsPage = () => {
         <div>
             <TweetPreview tweet={tweet} onToggleLike={toggleLike}/>
             {tweetParent.length > 0 ? (<TweetsList tweets={tweetParent} onToggleLike={toggleLike} />) : (<p> Il n'y a pas de réponse</p>) }
+            <Link to="/" className="retour"> Retour à l'accueil</Link>
         </div>
     )
 }

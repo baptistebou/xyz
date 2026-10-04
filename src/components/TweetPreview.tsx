@@ -18,17 +18,17 @@ export const TweetPreview = ({tweet, onToggleLike} : TweetPreviewProps) : ReactN
     }); 
     return(
         
-        <div>                
+        <div className="tweet-card">                
             <h1>{tweet.authorName}</h1>
-            <h2>@{tweet.authorHandle}</h2>  
-            <p>{formattedDate}</p>
+            <h2>@{tweet.authorHandle} </h2>  
+            <p>{formattedDate}</p>            
             {(tweet.image) && <Link to={`/tweets/${tweet.id}`}><img src={tweet.image.url} alt={tweet.image.alt} className="tweet-image" /></Link>}  
             {(isExpanded) ? <p>{tweet.content}</p>: <p>{tweet.content.slice(0, 180)}</p>}       
             {(tweet.content.length) > 180 &&  <button onClick={()=> setisExpanded(v => !v)}>{(isExpanded) ? "Voir moins" : "Voir plus"}</button>}
             <br />
             <span>{tweet.likes}  </span>
             <button onClick={() => onToggleLike(tweet.id)} className="jaime">{tweet.likedByMe ? "Je n'aime plus" : "J'aime"}</button>
-            <br />
+            <br />  
             <Link to={`/tweets/${tweet.id}`}>Voir la discussion</Link>     
         </div>
     );

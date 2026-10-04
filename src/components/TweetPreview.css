@@ -6,3 +6,23 @@
     gap: 20rem;
 }
 
+
+
+.tweet-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    border: 1px solid var(--bleu-clair);
+    border-radius: 12px;
+    padding: 1rem;
+}
+.tweet-image {
+    width: 300px;
+    
+}
+
+.retour {
+     display: block; 
+    margin-top: 1rem;
+    color: aliceblue;
+}
